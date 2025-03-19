@@ -11,8 +11,10 @@ const externalLinks = [{LinkTitle: "https://harry'sflowersandotherstuff.com"}];
 
 //starter page
 app.get('/home',(req,res)=>{
-    res.render('home.ejs');
-})
+    res.render('home.ejs',{welcome:`We started in 1900 with just a little seed, 
+      and now we service all the plant companies in the world!`,
+      pastwork: pastwork,
+    staff:staff})
 
 app.get('/server', (req, res) => {
   console.log('server funning');
