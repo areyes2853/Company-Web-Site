@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 
 app.use(express.static('public'));
-const pastwork = [{Work1: "Flower contest", Role: "Judge"}, {Work2: "Halloween show", Role: "Pumpkin suppliers"}, {Work3: "Gas station flower sellers", Role: "We needed money"}];
+const pastwork = [{Work: "Flower contest", Role: "Judge"}, {Work: "Halloween show", Role: "Pumpkin suppliers"}, {Work: "Gas station flower sellers", Role: "We needed money"}];
 const staff = [{EmployeeName: "John", Role: "Manager"}, {EmployeeName: "Sally", Role: "Flower keeper"}, {EmployeeName: "Mike", Role: "Monkey"}];
 const externalLinks = [{LinkTitle: "https://harry'sflowersandotherstuff.com"}];
 let message = `We started in 1900 with just a little seed, and now we service all the plant companies in the world!`
@@ -36,4 +36,5 @@ app.get('/server', (req, res) => {
 app.listen(3000, () => {
   console.log('Listening on port 3000');
 });
+
 

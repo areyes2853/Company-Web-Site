@@ -10,6 +10,15 @@
 <body>
     <h1>Welcome to are Company</h1>
    <P><%= welcome %></P> 
-   
+   <ul>
+   <% staff.forEach(element => { %>
+    
+    <a href ="/<%='itemId'%>"><li>
+       <%= element.EmployeeName%>
+    </li>
+</a>
+    
+   <% }); %>
+</ul>
 </body>
 </html>
