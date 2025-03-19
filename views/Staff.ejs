@@ -1,8 +1,12 @@
  <section id="contact">
         <h2>Contact Information</h2>
-        <p> You can contact us using the following methods:</p>
+        <p>
+            <%= message %>
+        </p>
     <ul>
-        <li>Email: <a>johnsflowers@gmail.com</a></li>
+        <% staff.forEach(element => { %>
+        <li><%= element.EmployeeName%>:<%= element.Role%></li>
         <li>Phone:<a>+1 (543)228-2547</a></li>
         <li>Address: 4567 Main Street, Washington, USA</li>
+       <% }); %>
     </ul>

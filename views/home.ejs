@@ -11,7 +11,11 @@
    <P><%= welcome %></P> 
    <ul>
    <% staff.forEach(element => { %>
-    <li><a href=""><%= element.EmployeeName%></a></li>
+    
+    <a href ="/<%='itemId'%>"><li>
+       <%= element.EmployeeName%>
+    </li>
+</a>
     
    <% }); %>
 </ul>
