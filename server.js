@@ -11,11 +11,15 @@ let message = `We started in 1900 with just a little seed, and now we service al
 
 //starter page
 app.get('/',(req,res)=>{
-    res.render('home.ejs',{welcome:message});
+    res.render('home.ejs',{welcome:message, 
+      staff: staff
+    });
   });
     
   app.get('/staff',(req,res)=>{ 
-    res.render('staff.ejs',{staff:staff,pastwork:pastwork});
+    res.render('staff.ejs',{
+      message: `test`,
+      staff:staff,pastwork:pastwork});
   });
 
   
@@ -28,6 +32,11 @@ app.get('/',(req,res)=>{
     } 
   });
   
+  app.get('/:itemId',(req,res) =>{
+    const itemId = req.params.itemId
+    res.render('Contact.ejs',{item:staff[itemId]})
+  })
+
 
 app.get('/server', (req, res) => {
   console.log('server funning');
