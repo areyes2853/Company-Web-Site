@@ -8,8 +8,14 @@
 </head>
 <%- include('./nav') %>
 <body>
-    <h1>Welcome to are Company</h1>
-   <P><%= welcome %></P> 
-   
+    <h1> Staff </h1>
+    <ul>
+        <% staff.forEach(employee => { %>
+          <li>
+            <a href="contact/<%= employee.EmployeeName %>"><%= employee.EmployeeName %></a> - <%= employee.Role %>
+          </li>
+        <% }); %>
+      </ul>
+</ul>
 </body>
 </html>

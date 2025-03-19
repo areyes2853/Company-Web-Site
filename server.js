@@ -10,9 +10,24 @@ const externalLinks = [{LinkTitle: "https://harry'sflowersandotherstuff.com"}];
 let message = `We started in 1900 with just a little seed, and now we service all the plant companies in the world!`
 
 //starter page
-app.get('/home',(req,res)=>{
-    res.render('home.ejs',{welcome:message,staff:staff,pastwork:pastwork});});
+app.get('/',(req,res)=>{
+    res.render('home.ejs',{welcome:message});
+  });
     
+  app.get('/staff',(req,res)=>{ 
+    res.render('staff.ejs',{staff:staff,pastwork:pastwork});
+  });
+
+  
+  app.get('/contact/:employeeName', (req, res) => {
+    const employeeName = req.params.employeeName;
+    const employee = staff.find(employee => employee.EmployeeName === employeeName);
+  
+    if (employee) {
+      res.render('contact.ejs', { employee: employee });
+    } 
+  });
+  
 
 app.get('/server', (req, res) => {
   console.log('server funning');
