@@ -11,9 +11,9 @@
     <h1>Welcome to our Company!</h1>
    <P><%= welcome %></P> 
    <ul>
-   <% staff.forEach(element => { %>
+   <% staff.forEach((element,index) => { %>
     
-    <a href="/<%= 'itemId' %>">
+    <a href="/<%= index %>">
     <li>
        <%= element.EmployeeName%>
     </li>

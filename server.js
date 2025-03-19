@@ -33,8 +33,8 @@ app.get('/',(req,res)=>{
   });
   
   app.get('/:itemId',(req,res) =>{
-    const itemId = req.params.itemId
-    res.render('Contact.ejs',{item:staff[itemId]})
+    const index = req.params.itemId
+    res.render('Contact.ejs',{item:staff[index]})
   })
 
 
