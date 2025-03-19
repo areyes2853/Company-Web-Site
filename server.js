@@ -10,8 +10,13 @@ const externalLinks = [{LinkTitle: "https://harry'sflowersandotherstuff.com"}];
 let message = `We started in 1900 with just a little seed, and now we service all the plant companies in the world!`
 
 //starter page
-app.get('/home',(req,res)=>{
+app.get('/',(req,res)=>{
     res.render('home.ejs',{welcome:message,staff:staff,pastwork:pastwork});});
+
+app.get('/:itemId',(req, res)=>{
+  const itemId = req.params.itemId
+  res.render('nav.ejs',{item:pastwork[itemId]})
+})
     
 
 app.get('/server', (req, res) => {
