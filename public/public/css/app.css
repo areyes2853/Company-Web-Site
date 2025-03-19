@@ -13,3 +13,8 @@ nav {
     border: 1px solid;
 }
 
+.contact{
+    margin: 2;
+    padding: 1;
+    background-color:rgb(248, 210, 215);
+}
