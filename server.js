@@ -1,12 +1,12 @@
 // server.js
-
+const { name } = require('ejs');
 const express = require('express');
 const app = express();
 
 app.use(express.static('public'));
 
 //starter page
-app.get('/',(req,res)=>{
+app.get('/home',(req,res)=>{
     res.render('home.ejs');
 })
 
