@@ -8,12 +8,12 @@
 </head>
 <body>
     <h1>Welcome to are Company</h1>
-    <p><%= welcome %></p>
-    <% staff.array.forEach(element => {%>
-        <ul>
-            <li><%=element.EmployeeName %> </li>
-        
-        </ul>
-    }); %>
+   <P><%= welcome %></P> 
+   <ul>
+   <% staff.forEach(element => { %>
+    <li><a href=""><%= element.EmployeeName%></a></li>
+    
+   <% }); %>
+</ul>
 </body>
 </html>
