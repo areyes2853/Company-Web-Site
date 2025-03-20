@@ -6,14 +6,18 @@
     <title>Document</title>
     
 </head>
+<%- include('./nav') %>
 <body>
     <h1>Hi!</h1>
+    
     <ul>
-        <%pastwork.forEach(past=> {%>
-        <li> <%= past.Role %> :<%=past.Work%></li>
-
-        
-        <%});%>
+        <% if (work && work.length > 0) { %>
+            <% work.forEach(function(past) { %>
+                <li><%= past.Role %> : <%= past.Work %></li>
+            <% }); %>
+        <% } else { %>
+            <li>No past work available.</li>
+        <% } %>
     </ul>
 </body>
 </html>

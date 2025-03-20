@@ -18,12 +18,11 @@ app.get('/',(req,res)=>{
     
   app.get('/staff',(req,res)=>{ 
     res.render('staff.ejs',{
-      message: `test`,
       staff:staff,pastwork:pastwork});
   });
 
   
-  app.get('/contact/:employeeName', (req, res) => {
+  app.get('/contact', (req, res) => {
     const employeeName = req.params.employeeName;
     const employee = staff.find(employee => employee.EmployeeName === employeeName);
   
@@ -32,11 +31,21 @@ app.get('/',(req,res)=>{
     } 
   });
   
-  app.get('/:itemId',(req,res) =>{
-    const index = req.params.itemId
-    res.render('Contact.ejs',{item:staff[index]})
-  })
+  // app.get('/',(req,res) =>{
+  //   const index = req.params.itemId
+  //   res.render('st.ejs',{item:staff[index]})
+  // })
 
+  app.get('/pastWork',(req,res) =>{
+    const work = pastwork;
+    console.log('Past work data:', work)
+    res.render(`pastWork.ejs`, {work})
+  })
+  
+  app.get('/contactUs', (req, res) => {
+    console.log('Contact Us route accessed');
+    res.render('contactUs.ejs');
+});
 
 app.get('/server', (req, res) => {
   console.log('server funning');
