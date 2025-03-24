@@ -15,27 +15,40 @@ app.get('/',(req,res)=>{
       staff: staff
     });
   });
+
+  app.get('/:itemId',(req,res) =>{
+    const index = req.params.itemId
+    res.render('Contact.ejs',{item:staff[index]})
+  })
     
   app.get('/staff',(req,res)=>{ 
     res.render('staff.ejs',{
-      message: `test`,
+      message: `Get to know are people`,
       staff:staff,pastwork:pastwork});
   });
 
+  app.get('/pastWork',(req,res)=>{ 
+    res.render('pastWork.ejs',{
+      message: `Get to know are people`,
+      pastwork:pastwork});
+  });
+
+  // app.get('/contact',(req,res)=>{ 
+  //   res.render('contact.ejs',{
+  //     message: `ontact US`,
+  //     pastwork:pastwork});
+  // });
   
   app.get('/contact/:employeeName', (req, res) => {
     const employeeName = req.params.employeeName;
     const employee = staff.find(employee => employee.EmployeeName === employeeName);
   
     if (employee) {
-      res.render('contact.ejs', { employee: employee });
+      res.render('contact.ejs', { employee: [employee] });
     } 
   });
   
-  app.get('/:itemId',(req,res) =>{
-    const index = req.params.itemId
-    res.render('Contact.ejs',{item:staff[index]})
-  })
+ 
 
 
 app.get('/server', (req, res) => {
