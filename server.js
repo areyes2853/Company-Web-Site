@@ -38,6 +38,8 @@ app.get('/',(req,res)=>{
   //     message: `ontact US`,
   //     pastwork:pastwork});
   // });
+
+  // fixing issut with
   
   app.get('/contact/:employeeName', (req, res) => {
     const employeeName = req.params.employeeName;
