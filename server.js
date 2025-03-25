@@ -16,10 +16,10 @@ app.get('/',(req,res)=>{
     });
   });
 
-  app.get('/:itemId',(req,res) =>{
-    const index = req.params.itemId
-    res.render('Contact.ejs',{item:staff[index]})
-  })
+  app.get('/contactUs', (req, res) => {
+    res.render('contactUs.ejs', { message: 'Your contact message here' });
+  });
+  
     
   app.get('/staff',(req,res)=>{ 
     res.render('staff.ejs',{
@@ -33,22 +33,30 @@ app.get('/',(req,res)=>{
       pastwork:pastwork});
   });
 
+
+
   // app.get('/contact',(req,res)=>{ 
   //   res.render('contact.ejs',{
   //     message: `ontact US`,
   //     pastwork:pastwork});
   // });
 
+  app.get('/:itemId', (req, res) => {
+    const index = req.params.itemId;
+    res.render('Contact.ejs', { item: staff[index] });
+  });
+  
+
   // fixing issut with
   
-  app.get('/contact/:employeeName', (req, res) => {
-    const employeeName = req.params.employeeName;
-    const employee = staff.find(employee => employee.EmployeeName === employeeName);
+  // app.get('/contact/:employeeName', (req, res) => {
+  //   const employeeName = req.params.employeeName;
+  //   const employee = staff.find(employee => employee.EmployeeName === employeeName);
   
-    if (employee) {
-      res.render('contact.ejs', { employee: [employee] });
-    } 
-  });
+  //   if (employee) {
+  //     res.render('contact.ejs', { employee: [employee] });
+  //   } 
+  // });
   
  
 

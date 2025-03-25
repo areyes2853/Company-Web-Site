@@ -1,12 +1,17 @@
- <section id="contact">
-        <h2>Contact Information</h2>
-        <p>
-            <%= message %>
-        </p>
+<section id="contact">
+    <h2>Contact Information</h2>
+    <p>
+        <%= message %>
+    </p>
     <ul>
-        <% staff.forEach(element => { %>
-        <li><%= element.EmployeeName%>:<%= element.Role%></li>
-        <li>Phone:<a>+1 (543)228-2547</a></li>
-        <li>Address: 4567 Main Street, Washington, USA</li>
-       <% }); %>
+        <% staff.forEach((element, index) => { %>
+        <li>
+            <a href="/<%= index %>">
+                <%= element.EmployeeName %>: <%= element.Role %>
+            </a>
+        </li>
+        <% }); %>
     </ul>
+    <p>Phone: <a href="tel:+15432282547">+1 (543)228-2547</a></p>
+    <p>Address: 4567 Main Street, Washington, USA</p>
+</section>
