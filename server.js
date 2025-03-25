@@ -16,17 +16,17 @@ app.get('/',(req,res)=>{
     });
   });
 
-  app.get('/contactUs', (req, res) => {
-    res.render('contactUs.ejs', { message: 'Your contact message here' });
-  });
-  
-    
   app.get('/staff',(req,res)=>{ 
     res.render('staff.ejs',{
       message: `Get to know are people`,
       staff:staff,pastwork:pastwork});
   });
 
+  app.get('/contactUs', (req, res) => {
+    res.render('contactUs.ejs', { message: 'Your contact message here' });
+  });
+  
+    
   app.get('/pastWork',(req,res)=>{ 
     res.render('pastWork.ejs',{
       message: `Get to know are people`,
